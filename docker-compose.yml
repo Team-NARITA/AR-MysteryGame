@@ -1,0 +1,25 @@
+version: "3"
+
+services:
+  front-end:
+    image: node:18-slim
+    container_name: front-end
+    ports:
+      - "5173:5173"
+    volumes:
+      - ./front-end:/ar-misterygame/front-end
+    working_dir: /ar-misterygame/front-end
+    tty: true
+    stdin_open: true
+    environment:
+      - CHOKIDAR_USEPOLLING=true
+  back-end:
+    image: openjdk:17-slim
+    container_name: back-end
+    ports:
+      - "8080:8080"
+    volumes:
+      - ./back-end:/ar-misterygame/back-end
+    working_dir: /ar-misterygame/back-end
+    tty: true
+    stdin_open: true
