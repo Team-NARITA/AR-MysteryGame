@@ -32,4 +32,5 @@ services:
       - MYSQL_ROOT_PASSWORD=root
       - TZ="Asia/Tokyo"
     volumes:
-      - ./db-config/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/my.cnf:/etc/mysql/conf.d/my.cnf
+      - ./database/db:/var/lib/mysql
